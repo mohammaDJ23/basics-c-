@@ -14,10 +14,10 @@
 
 int main()
 {
-  int favorite_number;
+  int favoriteNumber;
   std::cout << "Enter your favorite number between 1 and 100: ";
-  std::cin >> favorite_number;
+  std::cin >> favoriteNumber;
   std::cout << "Amazing!! That's my favorite numebr too!" << std::endl;
-  std::cout << "No really!" << " " << favorite_number << " " << "is my favorite number!" << std::endl;
+  std::cout << "No really!" << " " << favoriteNumber << " " << "is my favorite number!" << std::endl;
   return 0;
 }
