@@ -7,6 +7,9 @@ int main()
   std::vector <char> chars;
 
   // vector with 5 length and zero elements: {0, 0, 0, 0, 0}
+  std::vector <char> another_chars (5);
+
+  // vector with 5 length and zero elements: {0, 0, 0, 0, 0}
   std::vector <int> numbers (5);
 
   // vector with 6 length and 2 elements: {2, 2, 2, 2, 2, 2}
