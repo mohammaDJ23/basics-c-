@@ -19,7 +19,7 @@
     * int num {0};
     * num = 100.2;
   
-  * If we want to put result as a specifc type, we use std::static_cast<type>(...)
+  * If we want to put result as a specifc type, we use static_cast<type>(...)
 
 */
 
