@@ -47,7 +47,7 @@ int main()
   std::cin >> num3 >> num4 >> num5;
 
   int sum {0};
-  double avarege {0};
+  double avarege {0.0};
   
   sum = num3 + num4 + num5;
 
