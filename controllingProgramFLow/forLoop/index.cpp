@@ -19,5 +19,16 @@ int main()
   for (unsigned int i {}; i < vec.size(); i++)
     std::cout << vec.at(i) << std::endl;
 
+  std::cout << std::endl;
+
+  for (int i {1}; i <= 100; i++) {
+    std::cout << i;
+
+    if (i % 10 == 0)
+      std::cout << std::endl;
+    else
+      std::cout << " ";
+  }
+
   return 0;
 }
