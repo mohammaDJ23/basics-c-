@@ -39,6 +39,7 @@
     "xlocmon": "cpp",
     "xloctime": "cpp",
     "vector": "cpp",
-    "tuple": "cpp"
+    "tuple": "cpp",
+    "algorithm": "cpp"
   }
 }
