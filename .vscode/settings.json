@@ -40,6 +40,7 @@
     "xloctime": "cpp",
     "vector": "cpp",
     "tuple": "cpp",
-    "algorithm": "cpp"
+    "algorithm": "cpp",
+    "cctype": "cpp"
   }
 }
