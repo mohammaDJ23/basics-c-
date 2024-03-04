@@ -41,6 +41,7 @@
     "vector": "cpp",
     "tuple": "cpp",
     "algorithm": "cpp",
-    "cctype": "cpp"
+    "cctype": "cpp",
+    "string": "cpp"
   }
 }
