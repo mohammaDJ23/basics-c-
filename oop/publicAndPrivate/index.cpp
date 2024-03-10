@@ -1,3 +1,11 @@
+/*
+
+  class member access modifier:
+
+  public, private, protected
+
+*/
+
 #include <iostream>
 #include <string>
 
