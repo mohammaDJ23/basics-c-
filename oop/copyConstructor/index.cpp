@@ -1,3 +1,29 @@
+/*
+
+  - when objectare copied, c++ must create a new object from an existng object
+
+  - when is a copy of an object made?
+    - passing object by value as a parameter
+    - returning an object from a function by value
+    - constructing one object based on another of the same class
+    all of them exist in the below example
+
+  - c++ must have a way of accompishing this so it provides a compiler-defined copy constructor if you don't
+
+  - if you don't provide your own way of copying objects by value then the compiler provides a default way of copying objects
+
+  - copies the values of each data member to the new object
+    - default memberwise copy
+
+  - perfectly fine in many cases
+
+  - beware if you have a pointer data member
+    - pointer will be copied
+    - not what it is pointing to
+    - shallow vs deep copy - more in the next section
+
+*/
+
 #include <iostream>
 #include <string>
 
