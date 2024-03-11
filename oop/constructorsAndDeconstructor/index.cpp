@@ -21,6 +21,7 @@
     - no return type and no parameters
     - only 1 destructor is allowed per class - can not be overloaded
     - useful to release memory and other resources
+    - when the function reaches to the end (see display_player)
     - if a variable initialized in an scope or an stack, when the program goes after those scope, this method will call
     - called when memory is released (with delete keyword for a pointer)
     - if for example three classes defined in an scope, after the scope, destructor will call from 3 to 1, from bottom to up.
@@ -75,12 +76,19 @@ public:
   }
 };
 
+void display_player(Player p)
+{
+
+} // after this scope the destrcting method of p object will call (when the function reaches to the end)
+
 int main()
 {
   {
     Player person;
     person.set_name("mohammad nowresideh");
-  } // the destroy function will work after this block becuase person inside this block
+
+    display_player(person);
+  } // the destroy function will work for person in line 87 after this block becuase person inside this block
 
   {
     Player person1;
