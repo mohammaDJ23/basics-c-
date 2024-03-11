@@ -56,7 +56,7 @@ Account::Account(std::string n, std::string t, double b)
 }
 
 Account::Account(const Account &source)
-  : name{source.name}, type{source.type}, balance{source.balance} 
+  : Account{source.name, source.type, source.balance}
 {
   std::cout << name << " is copying the constructor." << std::endl;
 }
