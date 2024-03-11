@@ -60,7 +60,7 @@ Shallow::Shallow(int d)
 }
 
 Shallow::Shallow(const Shallow &source)
-  : data{source.data}
+  : data{source.data} // this is the key of the shallow copying
 {
   std::cout << "Copy constructor is called." << std::endl;
 }

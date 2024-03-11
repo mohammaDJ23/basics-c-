@@ -40,7 +40,7 @@ Deep::Deep(int d)
 }
 
 Deep::Deep(const Deep &source)
-  : Deep{*source.data}
+  : Deep{*source.data} // this is the key of the deep copying
 {
   std::cout << "Copy constructor is called." << std::endl;
 }
