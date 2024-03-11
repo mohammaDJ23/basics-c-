@@ -1,6 +1,6 @@
 /*
 
-  - when objectare copied, c++ must create a new object from an existng object
+  - when object are copied, c++ must create a new object from an existng object
 
   - when is a copy of an object made?
     - passing object by value as a parameter
