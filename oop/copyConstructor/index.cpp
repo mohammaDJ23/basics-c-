@@ -3,9 +3,9 @@
   - when object are copied, c++ must create a new object from an existng object
 
   - when is a copy of an object made?
-    - passing object by value as a parameter
-    - returning an object from a function by value
-    - constructing one object based on another of the same class
+    - passing object by value as a parameter (copy constructor will call)
+    - returning an object from a function by value (copy constructor will not call. just it will return the copy)
+    - constructing one object based on another of the same class (copy constructor will call)
     all of them exist in the below example
 
   - c++ must have a way of accompishing this so it provides a compiler-defined copy constructor if you don't
