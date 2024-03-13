@@ -55,6 +55,7 @@ public:
   ~Account();
 
   std::string get_name() const /* this is the key */;
+  void set_name(std::string);
 };
 
 Account::Account(std::string n)
@@ -83,6 +84,12 @@ std::string Account::get_name() const /* this is the key */
   return name;
 }
 
+void Account::set_name(std::string n)
+{
+  // here you are manipulating the name attr.
+  name = n;
+}
+
 void display_account(const Account &a)
 {
   std::cout << a.get_name() << std::endl;
@@ -95,6 +102,9 @@ int main()
 
   display_account(account1);
   display_account(account2);
+
+  // account1.set_name("Mike"); // error
+  account2.set_name("Moe");
 
   return 0;
 }
