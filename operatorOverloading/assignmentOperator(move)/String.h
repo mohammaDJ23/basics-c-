@@ -15,6 +15,9 @@ public:
 
   // assignment operator overloading (copy)
   String &operator=(const String &source);
+
+  // assignment operator overloading (move)
+  String &operator=(String &&source);
   
   void display() const;
   int get_length() const;
