@@ -10,6 +10,7 @@ public:
   String();
   String(const char *const str);
   String(const String &source);
+  String(String &&source);
   ~String();
 
   // assignment operator overloading

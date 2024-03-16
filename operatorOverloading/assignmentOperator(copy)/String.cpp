@@ -7,7 +7,7 @@ String::String()
 {
   this->str = new char[1];
   *this->str = '\0';
-  std::cout << "String created with address " << this << " and the str pointer contains " << this->str << "." << std::endl;
+  std::cout << "String created with address " << this << " and the str pointer contains '" << this->str << "'." << std::endl;
 }
 
 String::String(const char *const str)
@@ -20,12 +20,18 @@ String::String(const char *const str)
     this->str = new char[std::strlen(str) + 1];
     std::strcpy(this->str, str);
   }
-  std::cout << "String created with address " << this << " and the str pointer contains " << this->str << "." << std::endl;
+  std::cout << "String created with address " << this << " and the str pointer contains '" << this->str << "'." << std::endl;
 }
 
 String::String(const String &source)
   : String{source.str}
 {}
+
+String::String(String &&source)
+  : str{source.str}
+{
+  source.str = nullptr;
+}
 
 // assignment operator overloading (copy assignment) 
 // deep copy becuase a pointer exist in the class.
@@ -36,11 +42,15 @@ String &String::operator=(const String &source)
     return *this;
 
   // release the allocated memory
+  std::cout << "String with address " << this << " which contains '" << this->str << "' is deallocating..." << std::endl;
   delete[] this->str;
+  std::cout << "Deallocated." << std::endl;
 
   // allocate a new space
   this->str = new char[std::strlen(source.str) + 1];
   std::strcpy(this->str, source.str);
+  std::cout << "A new allocation is done." << std::endl;
+
   return *this;
 }
 
