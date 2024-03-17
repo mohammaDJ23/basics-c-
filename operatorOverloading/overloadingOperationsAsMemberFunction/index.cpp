@@ -32,6 +32,11 @@
   n3 = n1 - n2; => n1.operator-(n2)
   if (n1 == n2) => n1.operator==(n2)
 
+
+  String x {"hey"};
+
+  String y = "Moe" + x; // this will not work with operator function as a member of a class.
+
 */
 
 #include <iostream>
