@@ -138,3 +138,21 @@ String &operator+=(const String &rhs)
 {
   return this->operator=(this->operator+(rhs));
 }
+
+String operator*(int num) const
+{
+  char *buff = new char[(std::strlen(this->str) * num) + 1];
+  std::strcpy(buff, this->str);
+
+  for (int i {1}; i < num; i++)
+    std::strcat(buff, this->str);
+
+  String temp {buff};
+  delete[] buff;
+  return temp;
+}
+
+String &operator*=(int num)
+{
+  return this->operator=(this->operator*(num));
+}
