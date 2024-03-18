@@ -91,3 +91,19 @@ bool String::operator<(const String &obj) const
 {
   return std::strcmp(this->str, obj.str) < 0;
 }
+
+String &String::operator++()
+{
+  if (this->str == nullptr)
+    return *this;
+
+  for (size_t i {0}; i < std::strlen(this->str); i++)
+    this->str[i] = std::toupper(this->str[i]);
+
+  return *this;
+}
+
+String &String::operator++(int)
+{
+  return this->operator++();
+}
