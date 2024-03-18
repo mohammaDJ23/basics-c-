@@ -31,3 +31,11 @@ String::String(const String &&source)
   source.str = nullptr;
 }
 
+String::~String()
+{
+  if (this->str == nullptr) {}
+  else {}
+
+  delete[] this->str;
+}
+
