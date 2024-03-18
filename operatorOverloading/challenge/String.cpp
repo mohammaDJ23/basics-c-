@@ -39,3 +39,24 @@ String::~String()
   delete[] this->str;
 }
 
+String &String::operator=(const String &obj)
+{
+  if (this == &obj)
+    return *this;
+  
+  delete[] this->str;
+  this->str = new char[std::strlen(obj.str) + 1];
+  std::strcpy(this->str, obj.str);
+  return *this;
+}
+
+String &String::operator=(const String &&obj)
+{
+  if (this == &obj)
+    return *this;
+  
+  delete[] this->str;
+  this->str = obj.str;
+  obj.str = nullptr;
+  return *this;
+}
