@@ -60,3 +60,14 @@ String &String::operator=(const String &&obj)
   obj.str = nullptr;
   return *this;
 }
+
+String String::operator-() const
+{
+  char *buff = new char[std::strlen(this->str) + 1];
+  std::strcpy(buff, this->str);
+  for (size_t i {0}; i < std::strlen(buff); i++)
+    buff[i] = std::tolower(buff[i]);
+  String temp {buff};
+  delete[] buff;
+  return temp;
+}
