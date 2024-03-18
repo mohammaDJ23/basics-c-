@@ -133,3 +133,8 @@ String operator+(const String &rhs) const
   delete[] buff;
   return temp;
 }
+
+String &operator+=(const String &rhs)
+{
+  return this->operator=(this->operator+(rhs));
+}

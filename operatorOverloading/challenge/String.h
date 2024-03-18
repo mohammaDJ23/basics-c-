@@ -25,9 +25,9 @@ public:
   String &operator--();
   String &operator--(int);
   String operator+(const String &rhs) const;
-  String operator+=(const String &rhs) const;
+  String &operator+=(const String &rhs);
   String operator*(const String &rhs) const;
-  String operator*=(const String &rhs) const;
+  String &operator*=(const String &rhs);
 };
 
 #endif
