@@ -71,3 +71,23 @@ String String::operator-() const
   delete[] buff;
   return temp;
 }
+
+bool String::operator==(const String &obj) const
+{
+  return std::strcmp(this->str, obj.str) == 0;
+}
+
+bool String::operator!=(const String &obj) const
+{
+  return std::strcmp(this->str, obj.str) != 0;
+}
+
+bool String::operator>(const String &obj) const
+{
+  return std::strcmp(this->str, obj.str) > 0;
+}
+
+bool String::operator<(const String &obj) const
+{
+  return std::strcmp(this->str, obj.str) < 0;
+}
