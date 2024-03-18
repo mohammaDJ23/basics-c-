@@ -21,3 +21,13 @@ String::String(const char *const str)
   }
 }
 
+String::String(const String &source)
+  : String{source.str}
+{}
+
+String::String(const String &&source)
+  : str{source.str}
+{
+  source.str = nullptr;
+}
+
