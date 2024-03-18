@@ -10,3 +10,14 @@ String::String()
   *this->str = '\0';
 }
 
+String::String(const char *const str)
+  : str{nullptr}
+{
+  if (str == nullptr)
+    String();
+  else {
+    this->str = new char[std::strlen(str) + 1];
+    std::strcpy(this->str, str);
+  }
+}
+
