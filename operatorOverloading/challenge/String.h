@@ -22,8 +22,8 @@ public:
   bool operator>(const String &rhs) const;
   String &operator++();
   String &operator++(int);
-  String operator--() const;
-  String operator--(int) const;
+  String &operator--();
+  String &operator--(int);
   String operator+(const String &rhs) const;
   String operator+=(const String &rhs) const;
   String operator*(const String &rhs) const;
