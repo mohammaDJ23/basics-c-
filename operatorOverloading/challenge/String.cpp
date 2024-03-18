@@ -123,3 +123,13 @@ String &String::operator--(int)
 {
   return this->operator--();
 }
+
+String operator+(const String &rhs) const
+{
+  char *buff = new char[std::strlen(this->str) + std::strlen(rhs.str) + 1];
+  std::strcpy(buff, this->str);
+  std::strcat(buff, obj.str);
+  String temp {buff};
+  delete[] buff;
+  return temp;
+}
