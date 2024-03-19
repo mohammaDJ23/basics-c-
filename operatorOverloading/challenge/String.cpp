@@ -1,6 +1,6 @@
 #include <iostream>
 #include <cctype>
-#include <string>
+#include <cstring>
 #include "String.h"
 
 String::String()
@@ -25,7 +25,7 @@ String::String(const String &source)
   : String{source.str}
 {}
 
-String::String(const String &&source)
+String::String(String &&source)
   : str{source.str}
 {
   source.str = nullptr;
@@ -50,7 +50,7 @@ String &String::operator=(const String &obj)
   return *this;
 }
 
-String &String::operator=(const String &&obj)
+String &String::operator=(String &&obj)
 {
   if (this == &obj)
     return *this;
@@ -103,9 +103,11 @@ String &String::operator++()
   return *this;
 }
 
-String &String::operator++(int)
+String String::operator++(int)
 {
-  return this->operator++();
+  String old {this->str};
+  this->operator++();
+  return old;
 }
 
 String &String::operator--()
@@ -119,32 +121,48 @@ String &String::operator--()
   return *this;
 }
 
-String &String::operator--(int)
+String String::operator--(int)
 {
-  return this->operator--();
+  String old {this->str};
+  this->operator--();
+  return old;
 }
 
-String operator+(const String &rhs) const
+String String::operator+(const String &rhs) const
 {
   char *buff = new char[std::strlen(this->str) + std::strlen(rhs.str) + 1];
   std::strcpy(buff, this->str);
-  std::strcat(buff, obj.str);
+  std::strcat(buff, rhs.str);
   String temp {buff};
   delete[] buff;
   return temp;
 }
 
-String &operator+=(const String &rhs)
+String &String::operator+=(const String &rhs)
 {
+  /*
+  
+    *this = *this + rhs;
+    return *this;
+
+  */
   return this->operator=(this->operator+(rhs));
 }
 
-String operator*(int num) const
+String String::operator*(int num) const
 {
+  /*
+  
+    String temp;
+    for (int i = 0; i < num; i++)
+      temp += *this;
+    return temp;
+  
+  */  
   char *buff = new char[(std::strlen(this->str) * num) + 1];
-  std::strcpy(buff, this->str);
+  std::strcpy(buff, "");
 
-  for (int i {1}; i < num; i++)
+  for (int i {0}; i < num; i++)
     std::strcat(buff, this->str);
 
   String temp {buff};
@@ -152,7 +170,18 @@ String operator*(int num) const
   return temp;
 }
 
-String &operator*=(int num)
+String &String::operator*=(int num)
 {
+  /*
+  
+    *this = *this * num;
+    return *this;
+  
+  */
   return this->operator=(this->operator*(num));
+}
+
+void String::display()
+{
+  std::cout << this->str << std::endl;
 }

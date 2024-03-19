@@ -21,13 +21,15 @@ public:
   bool operator<(const String &rhs) const;
   bool operator>(const String &rhs) const;
   String &operator++();
-  String &operator++(int);
+  String operator++(int);
   String &operator--();
-  String &operator--(int);
+  String operator--(int);
   String operator+(const String &rhs) const;
   String &operator+=(const String &rhs);
   String operator*(int num) const;
   String &operator*=(int num);
+
+  void display();
 };
 
 #endif
