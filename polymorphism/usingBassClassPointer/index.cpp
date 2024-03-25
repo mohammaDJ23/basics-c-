@@ -22,7 +22,7 @@ public:
 class Checking_account: public Account
 {
 public:
-  void withdraw(double amount) const
+  virtual void withdraw(double amount) const
   {
     std::cout << "In Checking_account withdraw" << std::endl;
   }
@@ -31,7 +31,7 @@ public:
 class Saving_account: public Account
 {
 public:
-  void withdraw(double amount) const
+  virtual void withdraw(double amount) const
   {
     std::cout << "In Saving_account withdraw" << std::endl;
   }
@@ -40,7 +40,7 @@ public:
 class Trust_account: public Account
 {
 public:
-  void withdraw(double amount) const
+  virtual void withdraw(double amount) const
   {
     std::cout << "In Trust_account withdraw" << std::endl;
   }
