@@ -10,6 +10,7 @@
     - owns what is points to
     - cannot be assigned or copied
     - can be moved
+    - pointer arithmetic not supported (++, --, etc)
     - when the pointer is destroyed, what it points to is automatically destroyed
     - after an scope the pointer and what it points to will be destroy
 
