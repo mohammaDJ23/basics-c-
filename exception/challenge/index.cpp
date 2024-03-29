@@ -31,16 +31,16 @@ int main()
         moes_account->withdraw(5000);
         std::cout << *moes_account << std::endl;
     }
-    catch(const Illigal_balance_exception &ex)
+    catch (const Illigal_balance_exception &ex)
     {
         std::cerr << ex.what() << std::endl;
     }
-    catch(const Insufficent_funds_exception &ex)
+    catch (const Insufficent_funds_exception &ex)
     {
         std::cerr << ex.what() << std::endl;
     }
 
     std::cout << "Program completed successfully" << std::endl;
-    
+
     return 0;
 }

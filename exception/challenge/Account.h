@@ -4,7 +4,7 @@
 #include <iostream>
 #include "I_Printable.h"
 
-class Account: public I_Printable
+class Account : public I_Printable
 {
 private:
   static constexpr const char *def_name = "Unnamed Account";
@@ -16,12 +16,12 @@ protected:
 
 public:
   Account(const std::string name = def_name, const double balance = def_balance);
-  
+
   virtual ~Account() = default;
 
   virtual bool deposit(double amount) = 0;
   virtual bool withdraw(double amount) = 0;
-  
+
   double get_balance() const;
 };
 
