@@ -1,3 +1,37 @@
+/*
+
+    The elements are stored contiguously, which means that elements can be accessed not only through iterators, 
+    but also using offsets to regular pointers to elements. 
+    This means that a pointer to an element of a vector may be passed to any function that 
+    expects a pointer to an element of an array.
+
+    The storage of the vector is handled automatically, being expanded as needed. 
+    Vectors usually occupy more space than static arrays, because more memory is allocated to handle future growth. 
+    This way a vector does not need to reallocate each time an element is inserted, 
+    but only when the additional memory is exhausted. 
+    The total amount of allocated memory can be queried using capacity() function. 
+    Extra memory can be returned to the system via a call to shrink_to_fit()[1].
+
+    Reallocations are usually costly operations in terms of performance. 
+    The reserve() function can be used to eliminate reallocations if the number of elements is known beforehand.
+
+    The complexity (efficiency) of common operations on vectors is as follows:
+
+    Random access - constant 𝓞(1).
+    Insertion or removal of elements at the end - amortized constant 𝓞(1).
+    Insertion or removal of elements - linear in the distance to the end of the vector 𝓞(n).
+
+    std::vector (for T other than bool) meets the requirements of Container, 
+    AllocatorAwareContainer(since C++11), SequenceContainer, ContiguousContainer(since C++17) and ReversibleContainer.
+
+    Member functions of std::vector are constexpr: 
+    it is possible to create and use std::vector objects in the evaluation of a constant expression.
+
+    However, std::vector objects generally cannot be constexpr, 
+    because any dynamically allocated storage must be released in the same evaluation of constant expression.
+    
+*/
+
 #include <iostream>
 #include <string>
 #include <vector>
