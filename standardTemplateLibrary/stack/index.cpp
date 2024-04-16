@@ -7,13 +7,12 @@
 template <typename T>
 void display(std::stack<T> s)
 {
-    std::cout << "[ ";
     while (!s.empty())
     {
-        std::cout << s.top() << " ";
+        std::cout << "| " << s.top() << std::endl;
         s.pop();
     }
-    std::cout << "]" << std::endl;
+    std::cout << std::endl;
 }
 
 int main()
