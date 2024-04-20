@@ -1,9 +1,6 @@
-/*
-
-    Possible implementation
-    See also the implementations in libstdc++, libc++ and MSVC stdlib.
-
-*/
+#include <algorithm>
+#include <iostream>
+#include <vector>
 
 template<class InputIt, class UnaryFunc>
 constexpr UnaryFunc for_each(InputIt first, InputIt last, UnaryFunc f)
@@ -13,10 +10,6 @@ constexpr UnaryFunc for_each(InputIt first, InputIt last, UnaryFunc f)
 
     return f; // implicit move since C++11
 }
-
-#include <algorithm>
-#include <iostream>
-#include <vector>
 
 int main()
 {
