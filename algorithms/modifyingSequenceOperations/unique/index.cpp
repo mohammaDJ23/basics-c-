@@ -3,7 +3,7 @@
 #include <vector>
 
 template<class ForwardIt>
-ForwardIt x(ForwardIt first, ForwardIt last)
+ForwardIt unique(ForwardIt first, ForwardIt last)
 {
     if (first == last)
         return last;
@@ -44,7 +44,7 @@ int main()
     print(1);
  
     // remove consecutive (adjacent) duplicates
-    auto last = x(v.begin(), v.end());
+    auto last = std::unique(v.begin(), v.end());
     // v now holds {1 2 1 3 4 5 4 x x x}, where 'x' is indeterminate
     v.erase(last, v.end());
     print(2);
